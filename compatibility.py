@@ -117,3 +117,25 @@ def run():
     signed = signer.sign_transaction(
         tx
     )
+
+    report = signer.create_report(
+        signed
+    )
+
+    print(
+        json.dumps(
+            report,
+            indent=2
+        )
+    )
+
+    # Optional broadcast
+    # tx_hash = signer.web3.eth.send_raw_transaction(
+    #     signed.raw_transaction
+    # )
+    # print(tx_hash.hex())
+
+
+if __name__ == "__main__":
+    run()
+```
